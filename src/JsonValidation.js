@@ -483,7 +483,7 @@ var recurseObject = function (report, schema, json) {
     var pp = schema.patternProperties ? Object.keys(schema.patternProperties) : [];
 
     // m - The property name of the child.
-    var keys = Object.keys(json),
+    var keys = Object.keys(json).filter((key) => json[key] !== undefined),
         idx = keys.length;
 
     while (idx--) {
